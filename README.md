@@ -4,8 +4,11 @@ A simple bridge from keap to whatsapp
 
 ## Instruction
 git clone this repo
+
 cd path-to-folder
+
 npm i
+
 node index.js
 
 ## Keap http post
