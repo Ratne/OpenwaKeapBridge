@@ -47,7 +47,7 @@ app.post('/message', (req,res)=>{
 
        queue.push( {phone: phone, message: req.body.message} );
 
-        console.log(queue)
+
       res.send('ok').status(200);
     }
     else res.send('phone missing').status(404)
@@ -64,8 +64,6 @@ cron.schedule('* * * * *', () => {
 });
 
 function sendQueue(phone,message){
-    console.log(phone)
-    console.log(message)
     queue.shift()
     waClient.sendText(phone, message).then(res => console.log(res));
 }
